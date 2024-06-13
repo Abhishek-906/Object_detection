@@ -1,0 +1,671 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+
+<!--&lt;!&ndash;  <head>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <meta charset="utf-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <title>AI Based Object Detection</title>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    &lt;!&ndash; Additional CSS Files &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/assets/css/templatemo-scholar.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/assets/css/owl.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/assets/css/animate.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&ndash;&gt;-->
+
+<!--&lt;!&ndash;TemplateMo 586 Scholar&ndash;&gt;-->
+
+<!--&lt;!&ndash;https://templatemo.com/tm-586-scholar&ndash;&gt;-->
+
+<!--&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<style>&ndash;&gt;-->
+<!--&lt;!&ndash;    body{&ndash;&gt;-->
+<!--&lt;!&ndash;        color:white;&ndash;&gt;-->
+<!--&lt;!&ndash;        margin:0px;&ndash;&gt;-->
+<!--&lt;!&ndash;        padding:0px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    header.feature-box.top{&ndash;&gt;-->
+<!--&lt;!&ndash;    background-color:black;&ndash;&gt;-->
+<!--&lt;!&ndash;    height:100px;&ndash;&gt;-->
+<!--&lt;!&ndash;    margin:0px;&ndash;&gt;-->
+<!--&lt;!&ndash;    padding:20px;&ndash;&gt;-->
+<!--&lt;!&ndash;    text-align:center;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    header.feature-box.second{&ndash;&gt;-->
+<!--&lt;!&ndash;    background-color:blue;&ndash;&gt;-->
+<!--&lt;!&ndash;    height:50px;&ndash;&gt;-->
+<!--&lt;!&ndash;    text-align:center;&ndash;&gt;-->
+<!--&lt;!&ndash;    margin-top:-25px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    .features{&ndash;&gt;-->
+<!--&lt;!&ndash;      background-color:black;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 900px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 700px;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 35px;&ndash;&gt;-->
+<!--&lt;!&ndash;      object-fit: contain;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin:20px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    section.col-sm{&ndash;&gt;-->
+<!--&lt;!&ndash;      background-color:black;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 1000px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 650px;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 35px;&ndash;&gt;-->
+<!--&lt;!&ndash;      object-fit: contain;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin:40px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    img{&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 900px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 600px;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 35px;&ndash;&gt;-->
+<!--&lt;!&ndash;      object-fit: contain;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin:40px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .new{&ndash;&gt;-->
+<!--&lt;!&ndash;    color:black;&ndash;&gt;-->
+<!--&lt;!&ndash;    margin:0px;&ndash;&gt;-->
+<!--&lt;!&ndash;    padding:10px;&ndash;&gt;-->
+<!--&lt;!&ndash;    margin:0px;&ndash;&gt;-->
+<!--&lt;!&ndash;    margin-top:-10px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    &ndash;&gt;-->
+
+
+<!--&lt;!&ndash;/* CSS */&ndash;&gt;-->
+<!--&lt;!&ndash;.button-23 {&ndash;&gt;-->
+<!--&lt;!&ndash;  background-color: #FFFFFF;&ndash;&gt;-->
+<!--&lt;!&ndash;  border: 1px solid #222222;&ndash;&gt;-->
+<!--&lt;!&ndash;  border-radius: 8px;&ndash;&gt;-->
+<!--&lt;!&ndash;  box-sizing: border-box;&ndash;&gt;-->
+<!--&lt;!&ndash;  color: #222222;&ndash;&gt;-->
+<!--&lt;!&ndash;  cursor: pointer;&ndash;&gt;-->
+<!--&lt;!&ndash;  display: inline-block;&ndash;&gt;-->
+<!--&lt;!&ndash;  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;&ndash;&gt;-->
+<!--&lt;!&ndash;  font-size: 16px;&ndash;&gt;-->
+<!--&lt;!&ndash;  font-weight: 600;&ndash;&gt;-->
+<!--&lt;!&ndash;  line-height: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;  margin: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;  outline: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  padding: 13px 23px;&ndash;&gt;-->
+<!--&lt;!&ndash;  position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;  text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;  text-decoration: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  touch-action: manipulation;&ndash;&gt;-->
+<!--&lt;!&ndash;  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;&ndash;&gt;-->
+<!--&lt;!&ndash;  user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  -webkit-user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;  width: auto;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.button-23:focus-visible {&ndash;&gt;-->
+<!--&lt;!&ndash;  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;&ndash;&gt;-->
+<!--&lt;!&ndash;  transition: box-shadow .2s;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.button-23:active {&ndash;&gt;-->
+<!--&lt;!&ndash;  background-color: #F7F7F7;&ndash;&gt;-->
+<!--&lt;!&ndash;  border-color: #000000;&ndash;&gt;-->
+<!--&lt;!&ndash;  transform: scale(.96);&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;.button-23:disabled {&ndash;&gt;-->
+<!--&lt;!&ndash;  border-color: #DDDDDD;&ndash;&gt;-->
+<!--&lt;!&ndash;  color: #DDDDDD;&ndash;&gt;-->
+<!--&lt;!&ndash;  cursor: not-allowed;&ndash;&gt;-->
+<!--&lt;!&ndash;  opacity: 1;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;</style>&ndash;&gt;-->
+<!--&lt;!&ndash;  </head>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  &lt;!&ndash; ***** Preloader Start ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <div id="js-preloader" class="js-preloader">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="preloader-inner">&ndash;&gt;-->
+<!--&lt;!&ndash;      <span class="dot"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="dots">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; ***** Preloader End ***** &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;  &lt;!&ndash; ***** Header Area Start ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <header class="header-area header-sticky">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                <nav class="main-nav">&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Logo Start ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="index.html" class="logo">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h1>Image Detector</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Logo End ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Serach Start ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; <div class="search-input">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <form id="search" action="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        <i class="fa fa-search"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div> &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Serach Start ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Menu Start ***** &ndash;&gt;  &ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class='menu-trigger'>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span>Menu</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; ***** Menu End ***** &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                </nav>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </header>&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; ***** Header Area End ***** &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;  <div class="main-banner" id="top">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="col-lg-12">&ndash;&gt;-->
+<!--&lt;!&ndash;            <section class="col-sm " >&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="{{ url_for('show_image') }}"   alt="Upload image">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </section>&ndash;&gt;-->
+<!--&lt;!&ndash;      <section>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="new" >&ndash;&gt;-->
+<!--&lt;!&ndash;            <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">&ndash;&gt;-->
+<!--&lt;!&ndash;              {{form.hidden_tag()}}&ndash;&gt;-->
+<!--&lt;!&ndash;              {{form.file(class_="custom-file-input")}}&ndash;&gt;-->
+
+<!--&lt;!&ndash;              <div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <button type="submit" name="favorite" value="x" class="button-23" role="button">&ndash;&gt;-->
+<!--&lt;!&ndash;                  Submit&ndash;&gt;-->
+<!--&lt;!&ndash;              </button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </form>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </section>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  &ndash;&gt;-->
+
+<!--&lt;!&ndash;    <footer>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="col-lg-12">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>Copyright © 2024 Detector. All rights reserved.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </footer>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  &lt;!&ndash; Scripts &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; Bootstrap core JavaScript &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/vendor/jquery/jquery.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/assets/js/isotope.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/assets/js/owl-carousel.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/assets/js/counter.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;  <script src="../static/assets/js/custom.js"></script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  </body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--  <head>-->
+
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">-->
+
+<!--    <title>AI Based Object Detection</title>-->
+
+<!--    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+
+
+<!--    &lt;!&ndash; Additional CSS Files &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">-->
+<!--    <link rel="stylesheet" href="../static/assets/css/templatemo-scholar.css">-->
+<!--    <link rel="stylesheet" href="../static/assets/css/owl.css">-->
+<!--    <link rel="stylesheet" href="../static/assets/css/animate.css">-->
+<!--    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>-->
+<!--&lt;!&ndash;-->
+
+<!--TemplateMo 586 Scholar-->
+
+<!--https://templatemo.com/tm-586-scholar-->
+
+<!--&ndash;&gt;-->
+<!--<style>-->
+<!--    body{-->
+<!--        color:white;-->
+<!--        margin:0px;-->
+<!--        padding:0px;-->
+<!--    }-->
+<!--    header.feature-box.top{-->
+<!--    background-color:black;-->
+<!--    height:100px;-->
+<!--    margin:0px;-->
+<!--    padding:20px;-->
+<!--    text-align:center;-->
+<!--    }-->
+<!--    header.feature-box.second{-->
+<!--    background-color:blue;-->
+<!--    height:50px;-->
+<!--    text-align:center;-->
+<!--    margin-top:-25px;-->
+<!--    }-->
+<!--    .features{-->
+<!--      background-color:black;-->
+<!--      width: 900px;-->
+<!--      height: 700px;-->
+<!--      border-radius: 35px;-->
+<!--      object-fit: contain;-->
+<!--      margin:20px;-->
+<!--    }-->
+<!--    section.col-sm{-->
+<!--      background-color:black;-->
+<!--      width: 1000px;-->
+<!--      height: 650px;-->
+<!--      border-radius: 35px;-->
+<!--      object-fit: contain;-->
+<!--      margin:40px;-->
+<!--    }-->
+
+<!--    img{-->
+<!--      width: 900px;-->
+<!--      height: 600px;-->
+<!--      border-radius: 35px;-->
+<!--      object-fit: contain;-->
+<!--      margin:40px;-->
+<!--    }-->
+
+<!--    .new{-->
+<!--    color:black;-->
+<!--    margin:0px;-->
+<!--    padding:10px;-->
+<!--    margin:0px;-->
+<!--    margin-top:-10px;-->
+<!--    }-->
+
+
+
+<!--/* CSS */-->
+<!--.button-23 {-->
+<!--  background-color: #FFFFFF;-->
+<!--  border: 1px solid #222222;-->
+<!--  border-radius: 8px;-->
+<!--  box-sizing: border-box;-->
+<!--  color: #222222;-->
+<!--  cursor: pointer;-->
+<!--  display: inline-block;-->
+<!--  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-->
+<!--  font-size: 16px;-->
+<!--  font-weight: 600;-->
+<!--  line-height: 20px;-->
+<!--  margin: 0;-->
+<!--  outline: none;-->
+<!--  padding: 13px 23px;-->
+<!--  position: relative;-->
+<!--  text-align: center;-->
+<!--  text-decoration: none;-->
+<!--  touch-action: manipulation;-->
+<!--  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;-->
+<!--  user-select: none;-->
+<!--  -webkit-user-select: none;-->
+<!--  width: auto;-->
+<!--}-->
+
+<!--.button-23:focus-visible {-->
+<!--  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;-->
+<!--  transition: box-shadow .2s;-->
+<!--}-->
+
+<!--.button-23:active {-->
+<!--  background-color: #F7F7F7;-->
+<!--  border-color: #000000;-->
+<!--  transform: scale(.96);-->
+<!--}-->
+
+<!--.button-23:disabled {-->
+<!--  border-color: #DDDDDD;-->
+<!--  color: #DDDDDD;-->
+<!--  cursor: not-allowed;-->
+<!--  opacity: 1;-->
+<!--}-->
+
+<!--</style>-->
+<!--  </head>-->
+
+<!--<body>-->
+
+<!--  &lt;!&ndash; ***** Preloader Start ***** &ndash;&gt;-->
+<!--&lt;!&ndash;  <div id="js-preloader" class="js-preloader">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="preloader-inner">&ndash;&gt;-->
+<!--&lt;!&ndash;      <span class="dot"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="dots">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash; ***** Preloader End ***** &ndash;&gt;&ndash;&gt;-->
+
+<!--  &lt;!&ndash; ***** Header Area Start ***** &ndash;&gt;-->
+<!--  <header class="header-area header-sticky">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <nav class="main-nav">-->
+<!--                    &lt;!&ndash; ***** Logo Start ***** &ndash;&gt;-->
+<!--                    <a href="index.html" class="logo">-->
+<!--                        <h1>Image Detector</h1>-->
+<!--                    </a>-->
+<!--                    &lt;!&ndash; ***** Logo End ***** &ndash;&gt;-->
+<!--                    &lt;!&ndash; ***** Serach Start ***** &ndash;&gt;-->
+<!--                    &lt;!&ndash; <div class="search-input">-->
+<!--                      <form id="search" action="#">-->
+<!--                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />-->
+<!--                        <i class="fa fa-search"></i>-->
+<!--                      </form>-->
+<!--                    </div> &ndash;&gt;-->
+<!--                    &lt;!&ndash; ***** Serach Start ***** &ndash;&gt;-->
+<!--                    &lt;!&ndash; ***** Menu Start ***** &ndash;&gt;-->
+<!--                    <a class='menu-trigger'>-->
+<!--                        <span>Menu</span>-->
+<!--                    </a>-->
+<!--                    &lt;!&ndash; ***** Menu End ***** &ndash;&gt;-->
+<!--                </nav>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </header>-->
+<!--  &lt;!&ndash; ***** Header Area End ***** &ndash;&gt;-->
+
+<!--  <div class="main-banner" id="top">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-12">-->
+<!--            <section class="col-sm " >-->
+<!--                <img src="{{ url_for('video') }}"   alt="Upload video">-->
+
+<!--        </section>-->
+<!--      <section>-->
+<!--          <div class="new" >-->
+<!--            <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">-->
+<!--              {{form.hidden_tag()}}-->
+<!--              {{form.file(class_="custom-file-input")}}-->
+
+<!--              <div>-->
+<!--              <button type="submit" name="favorite" value="x" class="button-23" role="button">-->
+<!--                  Submit-->
+<!--              </button>-->
+<!--            </div>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--          </section>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--    <footer>-->
+<!--        <div class="container">-->
+<!--          <div class="col-lg-12">-->
+<!--            <p>Copyright © 2024 Detector. All rights reserved.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </footer>-->
+
+<!--  &lt;!&ndash; Scripts &ndash;&gt;-->
+<!--  &lt;!&ndash; Bootstrap core JavaScript &ndash;&gt;-->
+<!--  <script src="../static/vendor/jquery/jquery.min.js"></script>-->
+<!--  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>-->
+<!--  <script src="../static/assets/js/isotope.min.js"></script>-->
+<!--  <script src="../static/assets/js/owl-carousel.js"></script>-->
+<!--  <script src="../static/assets/js/counter.js"></script>-->
+<!--  <script src="../static/assets/js/custom.js"></script>-->
+
+<!--  </body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>AI Based Object Detection</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../static/assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="../static/assets/css/owl.css">
+    <link rel="stylesheet" href="../static/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 586 Scholar
+
+https://templatemo.com/tm-586-scholar
+
+-->
+<style>
+    body{
+        color:white;
+        margin:0px;
+        padding:0px;
+    }
+    header.feature-box.top{
+    background-color:black;
+    height:100px;
+    margin:0px;
+    padding:20px;
+    text-align:center;
+    }
+    header.feature-box.second{
+    background-color:blue;
+    height:50px;
+    text-align:center;
+    margin-top:-25px;
+    }
+    .features{
+      background-color:black;
+      width: 900px;
+      height: 700px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:20px;
+    }
+    section.col-sm{
+      background-color:black;
+      width: 100%;
+      height: 650px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:40px;
+    }
+
+    img{
+      width: 900px;
+      height: 600px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:40px;
+    }
+
+    .new{
+    color:black;
+    margin:0px;
+    padding:10px;
+    margin:0px;
+    margin-top:-10px;
+    }
+
+
+
+/* CSS */
+.button-23 {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+</style>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+<!--  <div id="js-preloader" class="js-preloader">-->
+<!--    <div class="preloader-inner">-->
+<!--      <span class="dot"></span>-->
+<!--      <div class="dots">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; ***** Preloader End ***** &ndash;&gt;-->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <h1>Video Detector</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Serach Start ***** -->
+                    <!-- <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div> -->
+                    <!-- ***** Serach Start ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+           <section class="col-sm " >
+                <img src="{{ url_for('video') }}"   alt="Upload video">
+
+        </section>
+      <section>
+          <div class="new" >
+            <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+              {{form.hidden_tag()}}
+              {{form.file(class_="custom-file-input")}}
+
+              <div>
+              <button type="submit" name="favorite" value="x" class="button-23" role="button">
+                  Submit
+              </button>
+            </div>
+            </form>
+          </div>
+          </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <footer>
+        <div class="container">
+          <div class="col-lg-12">
+            <p>Copyright © 2024 Detector. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/assets/js/isotope.min.js"></script>
+  <script src="../static/assets/js/owl-carousel.js"></script>
+  <script src="../static/assets/js/counter.js"></script>
+  <script src="../static/assets/js/custom.js"></script>
+
+  </body>
+</html>

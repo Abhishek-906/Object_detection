@@ -4,29 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3a0dee7-2657-427a-89cb-b0f955c0105f" name="Changes" comment="" />
+    <list default="true" id="b3a0dee7-2657-427a-89cb-b0f955c0105f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/video.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/webcam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/YOLO-Weights/ppe.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/YOLO_Video.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/bus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/flaskapp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/files/bikes.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/files/demo3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/InputVideo1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/header.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/static/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/templates/indexproject.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/templates/ui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskTutorial_YOLOv8_Web_PPE/templates/videoprojectnew.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_YOLOv8_Web/flaskapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_YOLOv8_Web/flaskapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/indexproject.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/ui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_YOLOv8_Web/templates/videoprojectnew.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2hB8VvAtnNo6yGFAYXdaYF1WjVQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.flaskapp (1)">
-    <configuration name="YOLOv8_Video" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="YOLO_Image" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AI Based Object Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -34,11 +69,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Running_YOLOv8_Video" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_YOLOv8_Web" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Running_YOLOv8_Video/YOLOv8_Video.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_YOLOv8_Web/YOLO_Image.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -47,7 +82,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="YOLOv8_Webcam" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="YOLO_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AI Based Object Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,11 +90,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Running_YOLOv8_Webcam" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Running_YOLOv8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Running_YOLOv8_Webcam/YOLOv8_Webcam.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Running_YOLOv8/YOLO_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,9 +191,9 @@
       <list>
         <item itemvalue="Python.flaskapp (1)" />
         <item itemvalue="Python.flaskapp (2)" />
+        <item itemvalue="Python.YOLO_Image" />
+        <item itemvalue="Python.YOLO_test" />
         <item itemvalue="Python.flaskapp" />
-        <item itemvalue="Python.YOLOv8_Video" />
-        <item itemvalue="Python.YOLOv8_Webcam" />
       </list>
     </recent_temporary>
   </component>
