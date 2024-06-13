@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>AI Based Object Detection</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../static/assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="../static/assets/css/owl.css">
+    <link rel="stylesheet" href="../static/assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 586 Scholar
+
+https://templatemo.com/tm-586-scholar
+
+-->
+<style>
+    body{
+        color:white;
+        margin:0px;
+        padding:0px;
+    }
+    header.feature-box.top{
+    background-color:black;
+    height:100px;
+    margin:0px;
+    padding:20px;
+    text-align:center;
+    }
+    header.feature-box.second{
+    background-color:blue;
+    height:50px;
+    text-align:center;
+    margin-top:-25px;
+    }
+    .features{
+      background-color:black;
+      width: 900px;
+      height: 700px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:20px;
+    }
+    section.col-sm{
+      background-color:black;
+      width: 1000px;
+      height: 650px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:40px;
+    }
+
+    img{
+      width: 900px;
+      height: 600px;
+      border-radius: 35px;
+      object-fit: contain;
+      margin:40px;
+    }
+
+    .new{
+    color:black;
+    margin:0px;
+    padding:10px;
+    margin:0px;
+    margin-top:-10px;
+    }
+    
+
+
+/* CSS */
+.button-23 {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+</style>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <h1>Live Detector</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Serach Start ***** -->
+                    <!-- <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div> -->
+                    <!-- ***** Serach Start ***** -->
+                    <!-- ***** Menu Start ***** -->  
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <section class="col-sm " >
+                <img src="{{ url_for('webapp') }}"   alt="Upload video">
+
+        </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+        <div class="container">
+          <div class="col-lg-12">
+            <p>Copyright © 2024 Detector. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/assets/js/isotope.min.js"></script>
+  <script src="../static/assets/js/owl-carousel.js"></script>
+  <script src="../static/assets/js/counter.js"></script>
+  <script src="../static/assets/js/custom.js"></script>
+
+  </body>
+</html>
